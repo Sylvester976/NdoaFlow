@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- Groom -->
+    <circle cx="20" cy="20" r="6" fill="black"></circle> <!-- head -->
+    <rect x="16" y="26" width="8" height="16" fill="black"></rect> <!-- body -->
+
+    <!-- Bride -->
+    <circle cx="44" cy="20" r="6" fill="pink"></circle> <!-- head -->
+    <path d="M38 26 L50 26 L56 48 L32 48 Z" fill="white"></path> <!-- dress -->
+    <path d="M38 26 Q44 10 50 26" fill="none" stroke="pink" stroke-width="2"></path> <!-- veil -->
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
