@@ -1,0 +1,199 @@
+:root {
+    --bg-light: #F5F5DC;
+    --container-light: #fefbf3;
+    --text-light: #5a5a5a;
+    --button-light: rgba(255, 255, 255, 0.8);
+    --border-light: rgba(0, 0, 0, 0.1);
+
+    --bg-dark: #2d2d2d;
+    --container-dark: #3d3d3d;
+    --text-dark: #e0e0e0;
+    --button-dark: rgba(60, 60, 60, 0.8);
+    --border-dark: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] {
+    --bg-color: var(--bg-light);
+    --container-color: var(--container-light);
+    --text-color: var(--text-light);
+    --button-color: var(--button-light);
+    --border-color: var(--border-light);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--bg-dark);
+    --container-color: var(--container-dark);
+    --text-color: var(--text-dark);
+    --button-color: var(--button-dark);
+    --border-color: var(--border-dark);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.wedding-container {
+    background-color: var(--container-color);
+    border-radius: 25px;
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 3px solid var(--border-color);
+}
+
+.couple-names {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.action-btn {
+    background: var(--button-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .action-btn:hover {
+    background: rgba(80, 80, 80, 0.9);
+}
+
+.action-btn i {
+    margin-right: 15px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 30px 0 20px;
+    color: var(--text-color);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--button-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg);
+}
+
+.qr-code {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--button-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 7px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(180, 165, 100, 0.15);
+}
+
+.join-link {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .join-link {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-content {
+    background-color: var(--container-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-close {
+    filter: var(--text-color) == var(--text-dark) ? invert(1) : invert(0);
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.spinner-border {
+    color: var(--text-color);
+}
