@@ -26,11 +26,8 @@ document.getElementById('traditionsModal').addEventListener('show.bs.modal', fun
     }, 1500);
 });
 
-// Reset loading state when modal is hidden
-document.getElementById('traditionsModal').addEventListener('hidden.bs.modal', function() {
-    const spinner = this.querySelector('.loading-spinner');
-    const content = this.querySelector('#traditionsContent');
-
-    spinner.style.display = 'flex';
-    content.style.display = 'none';
+document.querySelectorAll('#inviteModal a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.stopPropagation(); // stop bubbling to modal
+    });
 });

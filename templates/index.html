@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Nyambura + Ekisa Wedding</title>
-    <link rel="icon" type="image/png" href="/static/img/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg" />
-    <link rel="shortcut icon" href="/static/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png" />
-    <link rel="manifest" href="/static/img/site.webmanifest" />
+    <link href="/static/img/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+    <link href="/static/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+    <link href="/static/img/favicon.ico" rel="shortcut icon"/>
+    <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="/static/img/site.webmanifest" rel="manifest"/>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/all.min.css" rel="stylesheet">
     <link href="/static/css/main.css" rel="stylesheet">
@@ -20,7 +20,7 @@
             <i class="fas fa-moon" id="theme-icon"></i>
         </button>
 
-        <img src="/static/img/dp.jpg" alt="Nyambura + Ekisa photo" class="profile-img">
+        <img alt="Nyambura + Ekisa photo" class="profile-img" src="/static/img/dp.jpg">
 
         <h1 class="couple-names">Nyambura + Ekisa</h1>
 
@@ -31,44 +31,46 @@
             & find your way to Happy Valley Estate.
         </p>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#inviteModal">
+        <a class="action-btn" data-bs-target="#inviteModal" data-bs-toggle="modal" href="#">
             <i class="fas fa-envelope"></i>
             Invite Card
         </a>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#rsvpModal">
+        <a class="action-btn"
+           href="{{.RSVPLink}}"
+           target="_blank">
             <i class="fas fa-reply"></i>
             RSVP
         </a>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#venueModal">
+        <a class="action-btn" data-bs-target="#venueModal" data-bs-toggle="modal" href="#">
             <i class="fas fa-map-marker-alt"></i>
             Venue
         </a>
 
-        <a href="tel:+254747660485" class="action-btn">
+        <a class="action-btn" href="tel:+254747660485">
             <i class="fas fa-phone"></i>
-            +254 747 660 485
+            {{.Phone}}
         </a>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#whatsappModal">
+        <a class="action-btn" href="{{.WhatsAppLink}}" target="_blank">
             <i class="fab fa-whatsapp"></i>
             WhatsApp
         </a>
 
         <h3 class="section-title">Our Journey</h3>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#kuhandaModal">
+        <a class="action-btn" data-bs-target="#kuhandaModal" data-bs-toggle="modal" href="#">
             <i class="fas fa-users"></i>
             Kuhanda Ithigi: 28th June, 2025
         </a>
 
-        <a href="#" class="action-btn" data-bs-toggle="modal" data-bs-target="#aitodiarModal">
+        <a class="action-btn" data-bs-target="#aitodiarModal" data-bs-toggle="modal" href="#">
             <i class="fas fa-heart"></i>
             Aitodiar: 14th September, 2024
         </a>
 
-        <button class="action-btn" data-bs-toggle="modal" data-bs-target="#traditionsModal">
+        <button class="action-btn" data-bs-target="#traditionsModal" data-bs-toggle="modal">
             <i class="fas fa-book"></i>
             Marriage Traditions: Agikuyu and Iteso
         </button>
@@ -76,12 +78,12 @@
 </div>
 
 <!-- Marriage Traditions Modal -->
-<div class="modal fade" id="traditionsModal" tabindex="-1" aria-labelledby="traditionsModalLabel" aria-hidden="true">
+<div aria-hidden="true" aria-labelledby="traditionsModalLabel" class="modal fade" id="traditionsModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="traditionsModalLabel">Marriage Traditions: Agikuyu and Iteso</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <div class="loading-spinner">
@@ -93,7 +95,9 @@
                     <h6><strong>Agikuyu Marriage Traditions</strong></h6>
                     <p>The Kikuyu people have rich marriage customs that include:</p>
                     <ul>
-                        <li><strong>Kuhanda Ithigi</strong> - The planting of the branch ceremony, symbolizing the union of two families</li>
+                        <li><strong>Kuhanda Ithigi</strong> - The planting of the branch ceremony, symbolizing the union
+                            of two families
+                        </li>
                         <li><strong>Ruracio</strong> - The traditional dowry ceremony where families formally unite</li>
                         <li><strong>Ngurario</strong> - The actual wedding ceremony with traditional vows</li>
                     </ul>
@@ -106,64 +110,47 @@
                         <li><strong>Akuuta</strong> - The traditional wedding celebration with dancing and feasting</li>
                     </ul>
 
-                    <p class="mt-3"><em>Both traditions emphasize the importance of family unity, respect for elders, and the celebration of love through community gathering.</em></p>
+                    <p class="mt-3"><em>Both traditions emphasize the importance of family unity, respect for elders,
+                        and the celebration of love through community gathering.</em></p>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Other modals (placeholders) -->
+<!-- Invite Card Modal -->
 <div class="modal fade" id="inviteModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Wedding Invitation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
+        <div class="modal-content"> <!-- ✅ required -->
+            <!-- Header -->
+            <div class="modal-header-loading">
+                <button class="share-btn-modal" type="button">
+                    <i class="fas fa-share"></i>
+                </button>
+                <h5 class="modal-title-loading">Invite Card</h5>
+                <button class="close-btn-modal" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="modal-body">
-                <p>You are cordially invited to celebrate the wedding of Nyambura and Ekisa!</p>
+            <div class="modal-body-loading">
+                <img alt="QR Code" src="/qr" style="width:150px; height:150px; margin:20px auto; display:block;">
+                <a href="/qr" target="_blank" class="view-btn-modal">View</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="rsvpModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">RSVP</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p>Please confirm your attendance for this special celebration.</p>
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Your Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Will you attend?</label>
-                        <select class="form-select">
-                            <option>Yes, I'll be there!</option>
-                            <option>Sorry, can't make it</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="modal fade" id="venueModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Venue Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <h6>Happy Valley Estate</h6>
