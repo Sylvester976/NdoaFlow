@@ -11,6 +11,7 @@
     <link href="/static/img/site.webmanifest" rel="manifest"/>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/leaflet.css" />
     <link href="/static/css/main.css" rel="stylesheet">
 </head>
 <body data-theme="light">
@@ -124,7 +125,7 @@
 <!-- Invite Card Modal -->
 <div class="modal fade" id="inviteModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
-        <div class="modal-content"> <!-- ✅ required -->
+        <div class="modal-content">
             <!-- Header -->
             <div class="modal-header-loading">
                 <button class="share-btn-modal" type="button">
@@ -137,16 +138,16 @@
             </div>
             <div class="modal-body-loading">
                 <img alt="QR Code" src="/qr" style="width:150px; height:150px; margin:20px auto; display:block;">
-                <a href="/qr" target="_blank" class="view-btn-modal">View</a>
+                <a class="view-btn-modal" href="/qr" target="_blank">View</a>
             </div>
         </div>
     </div>
 </div>
 
 
-
+<!-- Modal -->
 <div class="modal fade" id="venueModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Venue Information</h5>
@@ -155,14 +156,25 @@
             <div class="modal-body">
                 <h6>Happy Valley Estate</h6>
                 <p>Join us at this beautiful location for our special day.</p>
-                <p><strong>Address:</strong> Happy Valley Estate, Nairobi</p>
+                <p><strong>Address:</strong> Happy Valley Estate, Thika</p>
                 <p><strong>Time:</strong> Details to follow</p>
+
+                <!-- Mini Map -->
+                <div id="map" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
+
+                <!-- Directions Button -->
+                <div class="d-grid mt-3">
+                    <button id="getDirectionsBtn" class="view-btn-modal">Get Directions</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/leaflet.js"></script>
+<script src="/static/js/location.js"></script>
 <script src="/static/js/main.js"></script>
 </body>
 </html>
