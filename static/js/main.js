@@ -31,3 +31,4 @@ document.querySelectorAll('#inviteModal a').forEach(link => {
         e.stopPropagation(); // stop bubbling to modal
     });
 });
+
