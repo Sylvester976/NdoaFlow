@@ -1,8 +1,8 @@
 :root {
-    --bg-light: #c7c2a6;
-    --container-light: #f5f2d3;
+    --bg-light: #CCCAA6;
+    --container-light: #FFFDD0;
     --text-light: #212c3f;
-    --button-light: #f5f2d3;
+    --button-light: #FFFDD0;
     --border-light: #212c3f;
     --border-light-viewer: rgba(0, 0, 0, 0.1);
 
@@ -41,7 +41,7 @@ body {
     background-color: var(--container-color);
     border-radius: 25px;
     padding: 40px 30px;
-    max-width: 500px;
+    max-width: 570px;
     margin: 0 auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
