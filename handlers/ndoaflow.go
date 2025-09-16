@@ -74,3 +74,26 @@ func GalleryHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(images)
 }
+
+func NewGalleryHandler(w http.ResponseWriter, r *http.Request) {
+	imageDir := "./static/images/Aitodiar"
+
+	files, err := os.ReadDir(imageDir)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var images []string
+	for _, f := range files {
+		if !f.IsDir() {
+			ext := filepath.Ext(f.Name())
+			if ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".webp" {
+				images = append(images, "/static/images/Aitodiar/"+f.Name())
+			}
+		}
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(images)
+}
