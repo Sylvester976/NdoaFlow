@@ -1,10 +1,14 @@
 package handlers
 
 import (
-	"github.com/skip2/go-qrcode"
+	"encoding/json"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
+
+	"github.com/skip2/go-qrcode"
 )
 
 type InviteData struct {
@@ -46,4 +50,27 @@ func QRHandler(w http.ResponseWriter, r *http.Request) {
 	// Serve the QR code as PNG
 	w.Header().Set("Content-Type", "image/png")
 	w.Write(png)
+}
+
+func GalleryHandler(w http.ResponseWriter, r *http.Request) {
+	imageDir := "./static/images/kuhanda-ithigi"
+
+	files, err := os.ReadDir(imageDir)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	var images []string
+	for _, f := range files {
+		if !f.IsDir() {
+			ext := filepath.Ext(f.Name())
+			if ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".webp" {
+				images = append(images, "/static/images/kuhanda-ithigi/"+f.Name())
+			}
+		}
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(images)
 }
