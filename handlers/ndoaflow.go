@@ -28,7 +28,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	data := InviteData{
 		RSVPLink:     "https://docs.google.com/forms/d/e/1FAIpQLSc7D6rHtvgOTa7yWzrcTi8U4Oho4PnJaiKMhRjwD3juh5__hw/viewform?usp=sharing&ouid=102791930819467703017",
 		WhatsAppLink: "https://wa.me/254747660485",
-		Phone:        "+254747660485",
+		Phone:        "+254 747 660 485",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
