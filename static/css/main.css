@@ -83,11 +83,12 @@ body {
     border-radius: 25px;
     padding: 12px 25px;
     margin-bottom: 15px;
-    width: 95%;
-    position: relative;          /* allows absolute positioning of the icon */
+    width: 90%;
+    position: relative;
     display: flex;
-    justify-content: center;      /* centers the text horizontally */
-    align-items: center;          /* vertical centering */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     text-decoration: none;
     color: var(--text-color);
     font-size: 15px;
@@ -95,13 +96,32 @@ body {
     backdrop-filter: blur(10px);
     margin-left: auto;
     margin-right: auto;
+    padding-left: 50px;
+    box-sizing: border-box;
 }
 
 .action-btn i {
-    position: absolute;           /* place icon separately from text */
-    left: 20px;                    /* move it to the far left */
-    font-size: 18px;               /* slightly larger icon */
+    position: absolute;
+    left: 20px;
+    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
+
+/* 📱 Responsive adjustments for small screens */
+@media (max-width: 400px) {
+    .action-btn {
+        padding-left: 40px;        /* slightly less left space */
+        font-size: 14px;            /* slightly smaller text */
+    }
+    .action-btn i {
+        left: 15px;                 /* bring icon a bit closer */
+        font-size: 17px;             /* scale icon slightly down */
+    }
+}
+
+
 
 .action-btn:hover {
     background: rgba(255, 255, 255, 0.9);
