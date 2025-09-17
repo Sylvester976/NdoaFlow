@@ -83,7 +83,7 @@ body {
     border-radius: 25px;
     padding: 12px 25px;
     margin-bottom: 15px;
-    width: 90%;
+    width: 92%;
     position: relative;          /* allows absolute positioning of the icon */
     display: flex;
     justify-content: center;      /* centers the text horizontally */
