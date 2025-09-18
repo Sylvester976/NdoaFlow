@@ -7,8 +7,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-
-	"github.com/skip2/go-qrcode"
 )
 
 type InviteData struct {
@@ -38,18 +36,16 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func QRHandler(w http.ResponseWriter, r *http.Request) {
-	qrData := "https://drive.google.com/file/d/1E6QMTnDP0SqKDoa9gOA-MGJ1SbuAac0G/view?usp=drive_link" // this can be dynamic
+func InviteHandler(w http.ResponseWriter, r *http.Request) {
+	// Path to your PDF file (can be dynamic)
+	pdfPath := "./static/docs/Invite_Card.pdf"
 
-	png, err := qrcode.Encode(qrData, qrcode.Medium, 256)
-	if err != nil {
-		http.Error(w, "QR generation failed", http.StatusInternalServerError)
-		return
-	}
+	// Set headers to open in browser
+	w.Header().Set("Content-Type", "application/pdf")
+	w.Header().Set("Content-Disposition", "inline; filename=sample.pdf")
 
-	// Serve the QR code as PNG
-	w.Header().Set("Content-Type", "image/png")
-	w.Write(png)
+	// Serve the file
+	http.ServeFile(w, r, pdfPath)
 }
 
 func GalleryHandler(w http.ResponseWriter, r *http.Request) {

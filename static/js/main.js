@@ -12,19 +12,6 @@ function toggleTheme() {
     }
 }
 
-// Simulate loading for traditions modal
-document.getElementById('traditionsModal').addEventListener('show.bs.modal', function() {
-    const spinner = this.querySelector('.loading-spinner');
-    const content = this.querySelector('#traditionsContent');
-
-    spinner.style.display = 'flex';
-    content.style.display = 'none';
-
-    setTimeout(() => {
-        spinner.style.display = 'none';
-        content.style.display = 'block';
-    }, 1500);
-});
 
 document.querySelectorAll('#inviteModal a').forEach(link => {
     link.addEventListener('click', function (e) {

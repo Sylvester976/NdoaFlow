@@ -17,7 +17,7 @@
 <body data-theme="light">
 <div class="container">
     <div class="wedding-container">
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
             <i class="fas fa-moon" id="theme-icon"></i>
         </button>
 
@@ -27,12 +27,12 @@
 
         <p class="subtitle" style="font-size: 17px; color:#000000;">
             Tradition meets cool vibes 🌿🥂 Join us<br>
-             as we celebrate love, culture & family.<br>
+            as we celebrate love, culture & family.<br>
             🔗 Tap below to RSVP, view our invite<br>
             & find your way to Happy Valley Estate.
         </p>
 
-        <a class="action-btn" data-bs-target="#inviteModal" data-bs-toggle="modal" href="#">
+        <a class="action-btn" href="/invite" target="_blank">
             <i class="fas fa-envelope"></i>
             Invite Card
         </a>
@@ -60,113 +60,94 @@
         </a>
 
         <h3 class="section-title">Our Journey</h3>
+        <div class="journey-links">
+            <a class="action-link" href="#" id="kuhandaBtn">
+                <i class="fas fa-users"></i>
+                Kuhanda Ithigi: 28th June, 2025
+            </a>
 
-        <a id="kuhandaBtn" class="action-btn" href="#">
-            <i class="fas fa-users"></i>
-            Kuhanda Ithigi: 28th June, 2025
-        </a>
 
-        <!-- Hidden gallery container -->
-        <div id="kuhandaGallery" style="display:none; margin-top:20px;">
-            <!-- Loading spinner -->
-            <div class="loading-spinner text-center my-5">
-                <div class="spinner-border text-secondary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            <!-- Hidden gallery container -->
+            <div id="kuhandaGallery" style="display:none; margin-top:20px;">
+                <!-- Loading spinner -->
+                <div class="loading-spinner text-center my-5">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading gallery...</p>
                 </div>
-                <p class="mt-2">Loading gallery...</p>
+
+                <!-- Image gallery -->
+                <div id="kuhandaContent" style="display:none;">
+                    <div id="kuhanda-image-gallery"
+                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+                    </div>
+                </div>
             </div>
 
-            <!-- Image gallery -->
-            <div id="kuhandaContent" style="display:none;">
-                <div id="kuhanda-image-gallery"
-                     style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+            <!-- The button -->
+            <a class="action-link" href="#" id="aitodiarBtn">
+                <i class="fas fa-heart"></i>
+                Aitodiar: 14th September, 2024
+            </a>
+
+            <!-- Hidden gallery container -->
+            <div id="aitodiarGallery" style="display:none; margin-top:20px;">
+                <!-- Loading spinner -->
+                <div class="loading-spinner text-center my-5">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading gallery...</p>
+                </div>
+
+                <!-- Image gallery -->
+                <div id="AitodiarContent" style="display:none;">
+                    <div id="image-gallery2"
+                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+                    </div>
+                </div>
+
+                <div class="text-center pb-3">
+                    <p class="mb-2 text-muted">
+                        Alitodiar: Maternal Figures, Groom's Friends and the Groom's Visit
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- The button -->
+            <a class="action-link" href="#" id="traditionsBtn">
+                <i class="fas fa-book"></i>
+                Marriage Traditions: Agikuyu and Iteso
+            </a>
+
+            <!-- Hidden inline preview container -->
+            <div id="traditionsContainer" style="display:none; margin-top:20px;">
+                <!-- Loading Spinner -->
+                <div class="loading-spinner text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- PDF Preview Area -->
+                <div id="traditionsContent" style="display: none; text-align:center;">
+                    <canvas id="pdf-preview" style="max-width:100%; border:1px solid #eee; border-radius:8px;"></canvas>
+                </div>
+
+                <!-- Footer -->
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-outline-secondary" id="closeTraditions" type="button">
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- The button -->
-        <a id="aitodiarBtn" class="action-btn" href="#">
-            <i class="fas fa-heart"></i>
-            Aitodiar: 14th September, 2024
-        </a>
-
-        <!-- Hidden gallery container -->
-        <div id="aitodiarGallery" style="display:none; margin-top:20px;">
-            <!-- Loading spinner -->
-            <div class="loading-spinner text-center my-5">
-                <div class="spinner-border text-secondary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <p class="mt-2">Loading gallery...</p>
-            </div>
-
-            <!-- Image gallery -->
-            <div id="AitodiarContent" style="display:none;">
-                <div id="image-gallery2"
-                     style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
-                </div>
-            </div>
-
-            <div class="text-center pb-3">
-                <p class="mb-2 text-muted">
-                    Alitodiar: Maternal Figures, Groom's Friends and the Groom's Visit
-                </p>
-            </div>
-        </div>
-
-
-        <!-- The button -->
-        <button id="traditionsBtn" class="action-btn">
-            <i class="fas fa-book"></i>
-            Marriage Traditions: Agikuyu and Iteso
-        </button>
-
-        <!-- Hidden inline preview container -->
-        <div id="traditionsContainer" style="display:none; margin-top:20px;">
-            <!-- Loading Spinner -->
-            <div class="loading-spinner text-center">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-
-            <!-- PDF Preview Area -->
-            <div id="traditionsContent" style="display: none; text-align:center;">
-                <canvas id="pdf-preview" style="max-width:100%; border:1px solid #eee; border-radius:8px;"></canvas>
-            </div>
-
-            <!-- Footer -->
-            <div class="d-flex justify-content-between mt-3">
-                <button id="closeTraditions" class="btn btn-outline-secondary" type="button">
-                    Close
-                </button>
-            </div>
-        </div>
 
     </div>
 </div>
-<!-- Invite Card Modal -->
-<div class="modal fade" id="inviteModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
-        <div class="modal-content">
-            <!-- Header -->
-            <div class="modal-header-loading">
-                <button class="share-btn-modal" type="button" aria-label="share button modal">
-                    <i class="fas fa-share"></i>
-                </button>
-                <h5 class="modal-title-loading">Invite Card</h5>
-                <button class="close-btn-modal" data-bs-dismiss="modal" type="button" aria-label="invite modal close button">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body-loading">
-                <img alt="QR Code" src="/qr" style="width:150px; height:150px; margin:20px auto; display:block;">
-                <a class="view-btn-modal" href="/qr" target="_blank">View</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="venueModal" tabindex="-1">
@@ -174,7 +155,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Venue Information</h5>
-                <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="venue modal close button"></button>
+                <button aria-label="venue modal close button" class="btn-close" data-bs-dismiss="modal"
+                        type="button"></button>
             </div>
             <div class="modal-body">
                 <h6>Happy Valley Estate</h6>
@@ -193,8 +175,6 @@
         </div>
     </div>
 </div>
-
-
 <script src="/static/js/bootstrap.bundle.min.js"></script>
 <script src="/static/js/leaflet.js"></script>
 <script src="/static/js/location.js"></script>

@@ -287,6 +287,68 @@ body {
     justify-content: center;
 }
 
+.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast a {
+    color: yellow !important;
+}
+
+.highlight-links a {
+    background: yellow !important;
+    color: black !important;
+    text-decoration: underline !important;
+    padding: 2px;
+}
+
+.dyslexia-font, .dyslexia-font * {
+    font-family: 'OpenDyslexic', Arial, sans-serif !important;
+}
+
+/* parent wrapper to center all links */
+.journey-links {
+    display: flex;
+    flex-direction: column;   /* stack them vertically */
+    align-items: center;      /* center the whole row */
+    gap: 10px;                /* spacing between links */
+}
+
+/* each link */
+.action-link {
+    display: flex;                /* flex (block-level) so it can center */
+    align-items: center;          /* vertically center icon + text */
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+    width: 320px;                 /* fixed width makes icons align */
+    justify-content: flex-start;  /* icon starts at same position */
+}
+
+.action-link i {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* 📱 small screens */
+@media (max-width: 400px) {
+    .action-link {
+        width: 90%;
+        font-size: 14px;
+    }
+    .action-link i {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
 
 
 
