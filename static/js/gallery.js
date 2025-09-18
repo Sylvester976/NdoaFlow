@@ -23,7 +23,7 @@ document.getElementById('kuhandaBtn').addEventListener('click', function (e) {
     fetch('/gallery/kuhanda-ithigi')
         .then(res => res.json())
         .then(images => {
-            console.log('Images response:', images);
+            // console.log('Images response:', images);
             if (!Array.isArray(images)) throw new Error('Invalid response');
 
             setTimeout(() => {
@@ -75,7 +75,7 @@ document.getElementById('aitodiarBtn').addEventListener('click', function (e) {
     fetch('/gallery/Aitodiar')
         .then(res => res.json())
         .then(images => {
-            console.log('Images response:', images);
+            // console.log('Images response:', images);
             if (!Array.isArray(images)) throw new Error('Invalid response');
 
             setTimeout(() => {
