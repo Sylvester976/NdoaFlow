@@ -115,56 +115,36 @@
         </div>
 
 
-        <button class="action-btn" data-bs-target="#traditionsModal" data-bs-toggle="modal">
+        <!-- The button -->
+        <button id="traditionsBtn" class="action-btn">
             <i class="fas fa-book"></i>
             Marriage Traditions: Agikuyu and Iteso
         </button>
-    </div>
-</div>
 
-<!-- Marriage Traditions Modal -->
-<div aria-hidden="true" aria-labelledby="traditionsModalLabel" class="modal fade" id="traditionsModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title" id="traditionsModalLabel">Marriage Traditions: Agikuyu and Iteso</h5>
-                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
-            </div>
-
-            <div class="modal-body">
-                <!-- Loading Spinner -->
-                <div class="loading-spinner text-center">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-
-                <!-- PDF Preview Area -->
-                <div id="traditionsContent" style="display: none; text-align:center;">
-                    <canvas id="pdf-preview" style="max-width:100%; border:1px solid #eee; border-radius:8px;"></canvas>
+        <!-- Hidden inline preview container -->
+        <div id="traditionsContainer" style="display:none; margin-top:20px;">
+            <!-- Loading Spinner -->
+            <div class="loading-spinner text-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
 
-            <div class="modal-footer d-flex justify-content-between">
-                <!-- View Button (left side) -->
-                <a class="btn btn-outline-secondary"
-                   href="/static/docs/Teso-and-Gikuyu-Traditional-Marriage-Processes.pdf"
-                   target="_blank">
-                    View Full
-                </a>
+            <!-- PDF Preview Area -->
+            <div id="traditionsContent" style="display: none; text-align:center;">
+                <canvas id="pdf-preview" style="max-width:100%; border:1px solid #eee; border-radius:8px;"></canvas>
+            </div>
 
-                <!-- Close Button (right side) -->
-                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">
+            <!-- Footer -->
+            <div class="d-flex justify-content-between mt-3">
+                <button id="closeTraditions" class="btn btn-outline-secondary" type="button">
                     Close
                 </button>
             </div>
-
         </div>
+
     </div>
 </div>
-
-
 <!-- Invite Card Modal -->
 <div class="modal fade" id="inviteModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">

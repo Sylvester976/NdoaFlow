@@ -1,31 +1,57 @@
-document.getElementById('traditionsModal').addEventListener('shown.bs.modal', function () {
-    // Point to your local worker file
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdf.worker.min.js";
+document.getElementById('traditionsBtn').addEventListener('click', function () {
+    const container = document.getElementById('traditionsContainer');
+    const loading = container.querySelector('.loading-spinner');
+    const content = document.getElementById('traditionsContent');
 
-    const url = "/static/docs/Teso-and-Gikuyu-Traditional-Marriage-Processes.pdf";
-
-    const loading = document.querySelector('#traditionsModal .loading-spinner');
-    const content = document.querySelector('#traditionsModal #traditionsContent');
-    const canvas = document.getElementById('pdf-preview');
-    const context = canvas.getContext('2d');
+    // Toggle visibility
+    if (container.style.display === 'block') {
+        container.style.display = 'none';
+        return;
+    } else {
+        container.style.display = 'block';
+    }
 
     // Reset UI
     loading.style.display = 'block';
     content.style.display = 'none';
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    content.innerHTML = ''; // Clear previous pages
 
-    // Load and render PDF
+    // Set worker path
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/js/pdf.worker.min.js";
+
+    const url = "/static/docs/Teso-and-Gikuyu-Traditional-Marriage-Processes.pdf";
+
+    // Load and render all pages
     pdfjsLib.getDocument(url).promise.then(pdf => {
-        return pdf.getPage(1);
-    }).then(page => {
-        const scale = 1.2;
-        const viewport = page.getViewport({ scale: scale });
+        const totalPages = pdf.numPages;
+        const pagePromises = [];
 
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+        for (let i = 1; i <= totalPages; i++) {
+            pagePromises.push(
+                pdf.getPage(i).then(page => {
+                    const scale = 1.2;
+                    const viewport = page.getViewport({ scale: scale });
 
-        const renderContext = { canvasContext: context, viewport: viewport };
-        return page.render(renderContext).promise;
+                    // Create a canvas per page
+                    const canvas = document.createElement('canvas');
+                    canvas.style.maxWidth = '100%';
+                    canvas.style.marginBottom = '20px';
+                    canvas.style.border = '1px solid #eee';
+                    canvas.style.borderRadius = '8px';
+
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    const renderContext = { canvasContext: context, viewport: viewport };
+                    return page.render(renderContext).promise.then(() => {
+                        content.appendChild(canvas);
+                    });
+                })
+            );
+        }
+
+        return Promise.all(pagePromises);
     }).then(() => {
         loading.style.display = 'none';
         content.style.display = 'block';
@@ -33,4 +59,9 @@ document.getElementById('traditionsModal').addEventListener('shown.bs.modal', fu
         console.error('PDF render error:', err);
         loading.innerHTML = '<p class="text-danger">Failed to load PDF preview.</p>';
     });
+});
+
+// Close button
+document.getElementById('closeTraditions').addEventListener('click', function () {
+    document.getElementById('traditionsContainer').style.display = 'none';
 });
