@@ -307,58 +307,70 @@ body {
     font-family: 'OpenDyslexic', Arial, sans-serif !important;
 }
 
-/* parent wrapper to center all links */
+/* Parent wrapper */
 .journey-links {
     display: flex;
-    flex-direction: column;   /* stack them vertically */
-    align-items: center;      /* center the whole row */
-    gap: 10px;                /* spacing between links */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Each link */
+/* All links */
 .action-link {
-    display: flex;                 /* flex so icon + text align */
-    align-items: center;           /* vertically center icon + text */
-    gap: 8px;                      /* spacing between icon and text */
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     color: var(--text-color);
     font-size: 15px;
-    width: 320px;                  /* fixed width on larger screens for alignment */
-    justify-content: flex-start;   /* left-align contents */
-    margin: 8px 0;                 /* space between links vertically */
+    width: 320px;
+    justify-content: flex-start;
+    margin: 8px 0;
 }
 
 .action-link i {
     font-size: 18px;
-    flex-shrink: 0;                 /* keep icon size stable */
+    flex-shrink: 0;
+}
+
+/* Center the first two links always */
+.journey-links .action-link:nth-of-type(1),
+.journey-links .action-link:nth-of-type(2) {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Keep the last link left-aligned and one line */
+.journey-links .action-link:last-of-type {
+    justify-content: flex-start;
+    text-align: left;
+    white-space: nowrap;
 }
 
 /* 📱 Small screens */
 @media (max-width: 400px) {
     .action-link {
-        width: 100%;               /* let them fill the container */
+        width: 95%;              /* stretch to container width */
         font-size: 14px;
     }
+
     .action-link i {
         font-size: 16px;
     }
+
+    /* Make sure centered links stay centered */
+    .journey-links .action-link:nth-of-type(1),
+    .journey-links .action-link:nth-of-type(2) {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Ensure last one stays left */
+    .journey-links .action-link:last-of-type {
+        justify-content: flex-start;
+        white-space: nowrap;
+    }
 }
-
-/* Target the first 2 links */
-.journey-links .action-link:nth-of-type(1),
-.journey-links .action-link:nth-of-type(2) {
-    justify-content: center;    /* center text and icon */
-    text-align: center;         /* center text inside */
-}
-
-/* Target the last link */
-.journey-links .action-link:last-of-type {
-    justify-content: flex-start; /* left align contents */
-    text-align: left;
-    white-space: nowrap;         /* keep everything in one line */
-}
-
-
 
 @media (max-width: 768px) {
     #traditionsContent {
