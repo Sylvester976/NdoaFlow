@@ -337,7 +337,7 @@ body {
 /* 📱 Small screens */
 @media (max-width: 400px) {
     .action-link {
-        font-size: 13px;         /* slightly smaller */
+        font-size: 9px;         /* slightly smaller */
     }
 
     .action-link i {
