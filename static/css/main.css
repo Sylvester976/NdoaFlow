@@ -330,7 +330,7 @@ body {
     gap: 8px;
     text-decoration: none;
     color: var(--text-color);
-    font-size: clamp(12px, 2.5vw, 15px); /* 👈 auto-shrink font size on small screens */
+    font-size: clamp(12px, 2.5vw, 13px); /* 👈 auto-shrink font size on small screens */
     white-space: nowrap;  /* 👈 keep text on one line */
     width: 100%;
     justify-content: flex-start;
@@ -339,7 +339,7 @@ body {
 }
 
 .action-link i {
-    font-size: clamp(14px, 2.5vw, 18px); /* 👈 icon also scales */
+    font-size: clamp(14px, 2.5vw, 15px); /* 👈 icon also scales */
     flex-shrink: 0;
 }
 
