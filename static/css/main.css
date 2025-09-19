@@ -343,49 +343,45 @@ body {
     }
 }
 
-/* Additional styling for better mobile responsiveness */
 @media (max-width: 768px) {
+    #traditionsContent {
+        padding: 0 8px;
+    }
+
     #traditionsContent table {
-        font-size: 0.9rem;
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;         /* let table shrink properly */
+        font-size: 0.85rem;
     }
 
     #traditionsContent th,
     #traditionsContent td {
-        padding: 10px 8px !important;
+        padding: 8px 6px !important;
+        word-break: break-word;     /* allow text to wrap */
     }
 
-    #traditionsContent h1 {
-        font-size: 1.5rem !important;
+    /* Make all heading levels smaller and centered */
+    #traditionsContent h1,
+    #traditionsContent h2,
+    #traditionsContent h3,
+    #traditionsContent h4,
+    #traditionsContent h5,
+    #traditionsContent h6 {
+        text-align: center;
+        line-height: 1.3;
+        word-break: break-word;
+        margin: 0.5em 0;
     }
 
-    #traditionsContent h2 {
-        font-size: 1.3rem !important;
-    }
+    #traditionsContent h1 { font-size: 1.3rem !important; }
+    #traditionsContent h2 { font-size: 1.1rem !important; }
+    #traditionsContent h3 { font-size: 1rem !important; }
+    #traditionsContent h4 { font-size: 0.95rem !important; }
+    #traditionsContent h5 { font-size: 0.9rem !important; }
+    #traditionsContent h6 { font-size: 0.85rem !important; }
 }
 
-/* Scrollbar styling for content area */
-#traditionsContent > div {
-    scrollbar-width: thin;
-    scrollbar-color: #FFFDD0 #f1f1f1;
-}
-
-#traditionsContent > div::-webkit-scrollbar {
-    width: 8px;
-}
-
-#traditionsContent > div::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-#traditionsContent > div::-webkit-scrollbar-thumb {
-    background: #FFFDD0;
-    border-radius: 4px;
-}
-
-#traditionsContent > div::-webkit-scrollbar-thumb:hover {
-    background: #FFFDD0;
-}
 
 
 
