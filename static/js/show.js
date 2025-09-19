@@ -23,6 +23,7 @@ document.getElementById('traditionsBtn').addEventListener('click', function () {
                 <div style="background: linear-gradient(135deg, #CCCAA6 0%, #CCCAA6 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 20px;">
                     <h1 style="margin: 0; font-size: 2rem; font-weight: 300; letter-spacing: 1px;">Traditional Marriage Processes</h1>
                     <p style="font-size: 1.1rem; margin-top: 10px; opacity: 0.9;">Iteso (Teso) and Agikuyu (Kikuyu)</p>
+                    <p>Auto rotate screen for better view (mobile device)</p>
                 </div>
                 
                 <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #CCCAA6;">
