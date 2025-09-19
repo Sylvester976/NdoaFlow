@@ -319,40 +319,37 @@ body {
 .journey-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;   /* left-align all links */
+    align-items: flex-start; /* left align all links */
     gap: 10px;
 }
 
-/* All links */
+/* Each link */
 .action-link {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
     color: var(--text-color);
-    font-size: 15px;
-    min-width: 320px;            /* allow to grow beyond 320px */
-    white-space: nowrap;         /* ⬅ prevent text from wrapping */
+    font-size: clamp(12px, 2.5vw, 15px); /* 👈 auto-shrink font size on small screens */
+    white-space: nowrap;  /* 👈 keep text on one line */
+    width: 100%;
     justify-content: flex-start;
     margin: 8px 0;
+    overflow: hidden;
 }
 
 .action-link i {
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px); /* 👈 icon also scales */
     flex-shrink: 0;
 }
 
-/* 📱 Small screens */
+/* Optional: ensure container doesn't squish */
 @media (max-width: 400px) {
-    .action-link {
-        width: 100%;               /* use full width of screen */
-        font-size: 14px;
-    }
-
-    .action-link i {
-        font-size: 16px;
+    .journey-links {
+        width: 100%;
     }
 }
+
 
 
 
