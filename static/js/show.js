@@ -19,7 +19,7 @@ document.getElementById('traditionsBtn').addEventListener('click', function () {
     // Load HTML content
     setTimeout(() => {
         content.innerHTML = `
-            <div style="font-family: 'Georgia', serif; line-height: 1.6; background: #f8f9fa; padding: 20px; border-radius: 10px; max-height: 70vh; overflow-y: auto;">
+            -<div class="traditions-box">
                 <div style="background: linear-gradient(135deg, #CCCAA6 0%, #CCCAA6 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 20px;">
                     <h1 style="margin: 0; font-size: 2rem; font-weight: 300; letter-spacing: 1px;">Traditional Marriage Processes</h1>
                     <p style="font-size: 1.1rem; margin-top: 10px; opacity: 0.9;">Iteso (Teso) and Agikuyu (Kikuyu)</p>

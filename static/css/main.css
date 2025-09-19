@@ -352,6 +352,16 @@ body {
     }
 }
 
+.traditions-box {
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    font-size: 0.75rem;
+}
 
 
 
@@ -363,14 +373,14 @@ body {
     #traditionsContent table {
         width: 100%;
         border-collapse: collapse;
-        table-layout: auto;         /* let table shrink properly */
+        table-layout: auto;         /* allow table to shrink */
         font-size: 0.85rem;
     }
 
     #traditionsContent th,
     #traditionsContent td {
         padding: 8px 6px !important;
-        word-break: break-word;     /* allow text to wrap */
+        word-break: break-word;     /* wrap long text */
     }
 
     /* Make all heading levels smaller and centered */
@@ -393,6 +403,26 @@ body {
     #traditionsContent h5 { font-size: 0.9rem !important; }
     #traditionsContent h6 { font-size: 0.85rem !important; }
 }
+
+/* 📱 Very narrow screens like 300px */
+@media (max-width: 320px) {
+    #traditionsContent table {
+        font-size: 0.75rem;          /* shrink text more */
+    }
+
+    #traditionsContent th,
+    #traditionsContent td {
+        padding: 6px 4px !important; /* tighter spacing */
+    }
+
+    #traditionsContent h1 { font-size: 1.1rem !important; }
+    #traditionsContent h2 { font-size: 1rem !important; }
+    #traditionsContent h3 { font-size: 0.9rem !important; }
+    #traditionsContent h4 { font-size: 0.85rem !important; }
+    #traditionsContent h5 { font-size: 0.8rem !important; }
+    #traditionsContent h6 { font-size: 0.75rem !important; }
+}
+
 
 
 
