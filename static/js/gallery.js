@@ -100,4 +100,14 @@ document.getElementById('aitodiarBtn').addEventListener('click', function (e) {
         });
 });
 
+// Close button
+document.getElementById('CloseAitodiar').addEventListener('click', function () {
+    document.getElementById('aitodiarGallery').style.display = 'none';
+});
+
+// Close button
+document.getElementById('Closekuhanda').addEventListener('click', function () {
+    document.getElementById('kuhandaGallery').style.display = 'none';
+});
+
 
