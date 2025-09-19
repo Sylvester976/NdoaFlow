@@ -311,42 +311,44 @@ body {
 .journey-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;   /* ⬅ left-align all links */
+    align-items: flex-start; /* left-align all links */
     gap: 10px;
 }
 
-/* Parent wrapper */
-.journey-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* left align all links */
-    gap: 10px;
-}
-
-/* Each link */
+/* All links */
 .action-link {
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
     color: var(--text-color);
-    font-size: clamp(12px, 2.5vw, 13px); /* 👈 auto-shrink font size on small screens */
-    white-space: nowrap;  /* 👈 keep text on one line */
-    width: 100%;
+    font-size: 15px;
+    width: 100%;                /* fills available space */
+    white-space: nowrap;        /* keep text in one line */
     justify-content: flex-start;
     margin: 8px 0;
-    overflow: hidden;
 }
 
 .action-link i {
-    font-size: clamp(14px, 2.5vw, 15px); /* 👈 icon also scales */
+    font-size: 18px;
     flex-shrink: 0;
 }
 
-/* Optional: ensure container doesn't squish */
+/* 📱 Small screens */
 @media (max-width: 400px) {
-    .journey-links {
-        width: 100%;
+    .action-link {
+        font-size: 13px;         /* slightly smaller */
+    }
+
+    .action-link i {
+        font-size: 16px;
+    }
+}
+
+/* 📱 Very narrow screens like 300px */
+@media (max-width: 320px) {
+    .action-link {
+        font-size: 10px;         /* reduce more if still overflowing */
     }
 }
 
