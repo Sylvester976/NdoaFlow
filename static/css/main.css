@@ -403,78 +403,115 @@ body {
     }
 }
 
+/* Fullscreen modal backdrop */
+.traditions-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;   /* full width */
+    height: 100vh;  /* full height */
+    background: rgba(0, 0, 0, 0.6); /* dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* above everything */
+    overflow: hidden;
+}
+
+/* Fullscreen traditions container */
 .traditions-container {
     background-color: var(--container-color);
-    border-radius: 20px;
-    padding: 50px 40px;
-    max-width: 900px;
-    width: 95%;
-    margin: 0 auto;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-    position: relative;
+    border-radius: 0; /* fullscreen look */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
     transition: all 0.3s ease;
 }
 
+/* Scrollable content area */
 .traditions-scroll-wrapper {
-    overflow-x: auto;   /* enables horizontal scroll */
-    overflow-y: auto;   /* enables vertical scroll */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
-    max-height: 80vh;   /* prevent it from going off screen vertically */
+    flex: 1;
+    overflow-x: auto;   /* allow horizontal scroll if table is very wide */
+    overflow-y: auto;   /* allow vertical scroll */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+    max-height: 100%;
 }
 
-/* Responsive tables inside traditions content */
-.traditions-container .table-container {
-    width: 100%;
-    overflow-x: auto;
-}
-
+/* Tables */
 .traditions-container table {
     width: 100%;
     border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: var(--text-color);
+
+    /* 🔑 let table shrink instead of fixed min width */
+    min-width: auto;
+    table-layout: auto;
 }
 
 .traditions-container th,
 .traditions-container td {
-    padding: 8px 10px;
-    vertical-align: top;
-    word-break: break-word;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+
+    /* ✅ allow wrapping */
+    white-space: normal;       /* wrap at spaces */
+    word-break: break-word;    /* break long words if needed */
+    overflow-wrap: anywhere;   /* modern fallback */
 }
 
-.traditions-container h1,
-.traditions-container h2,
-.traditions-container h3,
-.traditions-container h5,
-.traditions-container p {
-    word-wrap: break-word;
+.traditions-container th {
+    background-color: #f5f5f5;
+    font-weight: bold;
 }
 
+.traditions-container tr:nth-child(even) {
+    background-color: #fafafa;
+}
 
-/* Medium screens (tablets) */
+.traditions-container tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* 📱 Responsive tweaks */
 @media (max-width: 768px) {
     .traditions-container {
-        max-width: 100%;
-        padding: 30px 20px;
-        border-radius: 15px;
+        padding: 15px;
+    }
+    .traditions-container table {
+        font-size: 0.9rem; /* slightly smaller text */
     }
 }
 
-/* Small screens (phones, ~480px) */
 @media (max-width: 480px) {
     .traditions-container {
-        padding: 20px 15px;
-        border-radius: 12px;
+        padding: 10px;
+    }
+    .traditions-container table {
+        font-size: 0.85rem;
     }
 }
 
-/* Extra small screens (~300px) */
 @media (max-width: 320px) {
     .traditions-container {
-        padding: 15px 10px;
-        border-radius: 10px;
-        width: 100%;
+        padding: 8px;
+    }
+    .traditions-container table {
+        font-size: 0.8rem;
     }
 }
+
+
+
 
 
 
