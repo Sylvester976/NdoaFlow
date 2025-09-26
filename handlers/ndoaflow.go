@@ -42,7 +42,7 @@ func InviteHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Set headers to open in browser
 	w.Header().Set("Content-Type", "application/pdf")
-	w.Header().Set("Content-Disposition", "inline; filename=sample.pdf")
+	w.Header().Set("Content-Disposition", "inline; filename=Invite_Card.pdf")
 
 	// Serve the file
 	http.ServeFile(w, r, pdfPath)
@@ -92,4 +92,16 @@ func NewGalleryHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(images)
+}
+
+func MarriageTraditionsHandler(w http.ResponseWriter, r *http.Request) {
+	// Path to your PDF file (can be dynamic)
+	pdfPath := "./static/docs/Teso-and-Gikuyu-Traditional-Marriage-Processes.pdf"
+
+	// Set headers to open in browser
+	w.Header().Set("Content-Type", "application/pdf")
+	w.Header().Set("Content-Disposition", "inline; filename=Teso-and-Gikuyu-Traditional-Marriage-Processes.pdf")
+
+	// Serve the file
+	http.ServeFile(w, r, pdfPath)
 }

@@ -10,4 +10,5 @@ func SetupRoutes() {
 	http.HandleFunc("/invite", handlers.InviteHandler)
 	http.HandleFunc("/gallery/kuhanda-ithigi", handlers.GalleryHandler)
 	http.HandleFunc("/gallery/Aitodiar", handlers.NewGalleryHandler)
+	http.HandleFunc("/marriage-traditions", handlers.MarriageTraditionsHandler)
 }
