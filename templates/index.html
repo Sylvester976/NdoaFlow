@@ -25,14 +25,14 @@
 
         <h1 class="couple-names">Nyambura + Ekisa</h1>
 
-        <p class="subtitle" style="font-size: 17px; color:#000000;">
+        <p class="subtitle">
             Tradition meets cool vibes 🌿🥂 Join us<br>
             as we celebrate love, culture & family.<br>
             🔗 Tap below to RSVP, view our invite<br>
             & find your way to Happy Valley Estate.
         </p>
 
-        <a class="action-btn" href="/invite" target="_blank">
+        <a class="action-btn" data-bs-target="#inviteModal" data-bs-toggle="modal" href="#">
             <i class="fas fa-envelope"></i>
             Invite Card
         </a>
@@ -61,105 +61,48 @@
 
         <h3 class="section-title">Our Journey</h3>
         <div class="journey-links">
-            <a class="action-link" href="#" id="kuhandaBtn">
+            <a class="action-link" data-bs-target="#kuhandaModal" data-bs-toggle="modal" href="#" id="kuhandaBtn">
                 <i class="fas fa-users"></i>
                 Kuhanda Ithigi: 28th June, 2025
             </a>
 
-
-            <!-- Hidden gallery container -->
-            <div id="kuhandaGallery" style="display:none; margin-top:20px;">
-                <!-- Loading spinner -->
-                <div class="loading-spinner text-center my-5">
-                    <div class="spinner-border text-secondary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p class="mt-2">Loading gallery...</p>
-                </div>
-
-                <!-- Image gallery -->
-                <div id="kuhandaContent" style="display:none;">
-                    <div id="kuhanda-image-gallery"
-                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between mt-1">
-                    <button class="btn btn-outline-secondary" id="Closekuhanda" type="button">
-                        Close
-                    </button>
-                </div>
-            </div>
-
-            <!-- The button -->
-            <a class="action-link" href="#" id="aitodiarBtn">
+            <a class="action-link" data-bs-target="#aitodiarModal" data-bs-toggle="modal" href="#" id="aitodiarBtn">
                 <i class="fas fa-heart"></i>
                 Aitodiar: 14th September, 2024
             </a>
 
-            <!-- Hidden gallery container -->
-            <div id="aitodiarGallery" style="display:none; margin-top:20px;">
-                <!-- Loading spinner -->
-                <div class="loading-spinner text-center my-5">
-                    <div class="spinner-border text-secondary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                    <p class="mt-2">Loading gallery...</p>
-                </div>
-
-                <!-- Image gallery -->
-                <div id="AitodiarContent" style="display:none;">
-                    <div id="image-gallery2"
-                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
-                    </div>
-                </div>
-
-                <div class="text-center pb-3">
-                    <p class="mb-2 text-muted">
-                        Alitodiar: Maternal Figures, Groom's Friends and the Groom's Visit
-                    </p>
-                </div>
-                <div class="d-flex justify-content-between mt-1">
-                    <button class="btn btn-outline-secondary" id="CloseAitodiar" type="button">
-                        Close
-                    </button>
-                </div>
-            </div>
-
-
-            <!-- The button -->
-            <a class="action-link" href="#" id="traditionsBtn">
+            <a class="action-link" href="#" id="traditionsBtn" data-bs-toggle="modal" data-bs-target="#traditionsModal">
                 <i class="fas fa-book"></i>
                 Marriage Traditions: Agikuyu and Iteso
             </a>
-
-            <!-- Hidden inline preview container -->
-            <div id="traditionsContainer" style="display:none; margin-top:20px;">
-                <!-- Loading Spinner -->
-                <div class="loading-spinner text-center">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-
-                <!-- HTML Content Area -->
-                <div id="traditionsContent" style="display: none;">
-                    <!-- The HTML content will be inserted here -->
-                </div>
-
-                <!-- Footer -->
-                <div class="d-flex justify-content-between mt-1">
-                    <button class="btn btn-outline-secondary" id="closeTraditions" type="button">
-                        Close
-                    </button>
-                </div>
-            </div>
         </div>
-
-
     </div>
 </div>
 
-<!-- Modal -->
+<!--Invite Modal-->
+<div class="modal fade" id="inviteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Invitation Card</h5>
+                <button aria-label="invite modal close button" class="btn-close" data-bs-dismiss="modal"
+                        type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p>SAVE THE DATE FOR NYAMBURA & EKISA RURACIO</p>
+                <p><strong>Address:</strong> Happy Valley Estate, Thika</p>
+                <p><strong>Date:</strong> 29 November 2025</p>
+                <!-- Invitation Card view -->
+                <div class="d-grid mt-3">
+                    <a class="view-btn-modal" href="/invite" target="_blank">Get Invitation Card Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Venue Modal -->
 <div class="modal fade" id="venueModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 360px; margin: auto;">
         <div class="modal-content">
@@ -185,6 +128,118 @@
         </div>
     </div>
 </div>
+
+<!-- Kuhanda Modal -->
+<div aria-hidden="true" aria-labelledby="kuhandaModalLabel" class="modal fade" id="kuhandaModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content wedding-container">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kuhandaModalLabel">
+                    Kuhanda Ithigi - Image Gallery
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Loading spinner -->
+                <div class="loading-spinner text-center my-5">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading gallery...</p>
+                </div>
+
+                <!-- Image gallery -->
+                <div id="kuhandaContent" style="display:none;">
+                    <div id="kuhanda-image-gallery"
+                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Aitodiar Modal -->
+<div aria-hidden="true" aria-labelledby="aitodiarModalLabel" class="modal fade" id="aitodiarModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content wedding-container">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="aitodiarModalLabel">Aitodiar - Image Gallery</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Loading spinner -->
+                <div class="loading-spinner text-center my-5">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading gallery...</p>
+                </div>
+
+                <!-- Image gallery -->
+                <div id="AitodiarContent" style="display:none;">
+                    <div id="image-gallery2"
+                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="text-center pb-3 mt-3">
+                    <p class="mb-2 text-muted">
+                        Aitodiar: Maternal Figures, Groom's Friends and the Groom's Visit
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Marriage Traditions Modal-->
+<div class="modal fade" id="traditionsModal" tabindex="-1" aria-labelledby="traditionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content traditions-container">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="traditionsModalLabel">Marriage Traditions: Agikuyu & Iteso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Loading Spinner -->
+                <div class="loading-spinner text-center my-5">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Loading content...</p>
+                </div>
+
+                <!-- HTML Content Area -->
+                <div id="traditionsContent" style="display: none;">
+                    <!-- The HTML content will be inserted here dynamically -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="/static/js/bootstrap.bundle.min.js"></script>
 <script src="/static/js/leaflet.js"></script>
 <script src="/static/js/location.js"></script>
