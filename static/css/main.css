@@ -403,20 +403,7 @@ body {
     }
 }
 
-/* Fullscreen modal backdrop */
-.traditions-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;   /* full width */
-    height: 100vh;  /* full height */
-    background: rgba(0, 0, 0, 0.6); /* dim background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1050; /* above everything */
-    overflow: hidden;
-}
+
 
 /* Fullscreen traditions container */
 .traditions-container {
@@ -431,55 +418,6 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-}
-
-/* Scrollable content area */
-.traditions-scroll-wrapper {
-    flex: 1;
-    overflow-x: auto;   /* allow horizontal scroll if table is very wide */
-    overflow-y: auto;   /* allow vertical scroll */
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 15px;
-    max-height: 100%;
-}
-
-/* Tables */
-.traditions-container table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 0.95rem;
-    background-color: #fff;
-    color: var(--text-color);
-
-    /* 🔑 let table shrink instead of fixed min width */
-    min-width: auto;
-    table-layout: auto;
-}
-
-.traditions-container th,
-.traditions-container td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: left;
-
-    /* ✅ allow wrapping */
-    white-space: normal;       /* wrap at spaces */
-    word-break: break-word;    /* break long words if needed */
-    overflow-wrap: anywhere;   /* modern fallback */
-}
-
-.traditions-container th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-}
-
-.traditions-container tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-.traditions-container tr:hover {
-    background-color: #f0f0f0;
 }
 
 /* 📱 Responsive tweaks */
@@ -509,6 +447,22 @@ body {
         font-size: 0.8rem;
     }
 }
+
+#traditions-pdf-viewer {
+    overflow-y: auto;
+    max-height: 70vh; /* keeps scroll inside modal */
+    padding: 10px;
+}
+
+
+#traditions-pdf-viewer canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* center and spacing */
+}
+
+
 
 
 

@@ -207,37 +207,43 @@
     </div>
 </div>
 
-<!--Marriage Traditions Modal-->
-<div class="modal fade" id="traditionsModal" tabindex="-1" aria-labelledby="traditionsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+<!-- Marriage Traditions PDF Modal -->
+<div aria-hidden="true" aria-labelledby="traditionsModalLabel" class="modal fade" id="traditionsModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content traditions-container">
-
             <div class="modal-header">
-                <h5 class="modal-title" id="traditionsModalLabel">Marriage Traditions: Agikuyu & Iteso</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="traditionsModalLabel">
+                    Marriage Traditions: Agikuyu and Iteso (PDF Viewer)
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
-                <!-- Loading Spinner -->
+                <!-- Loading spinner -->
                 <div class="loading-spinner text-center my-5">
-                    <div class="spinner-border" role="status">
+                    <div class="spinner-border text-secondary" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <p class="mt-2">Loading content...</p>
+                    <p class="mt-2">Loading PDF...</p>
                 </div>
 
-                <!-- HTML Content Area -->
-                <div id="traditionsContent" style="display: none;">
-                    <!-- The HTML content will be inserted here dynamically -->
+                <!-- PDF pages container -->
+                <div id="traditionsContent" style="display:none;">
+                    <div id="traditions-pdf-viewer"
+                         style="display:flex; flex-direction:column; align-items:center; gap:30px; overflow-y:auto; max-height:70vh; padding:10px;">
+                    </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" type="button">
+                    Close
+                </button>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <script src="/static/js/bootstrap.bundle.min.js"></script>
